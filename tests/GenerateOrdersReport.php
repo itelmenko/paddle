@@ -32,7 +32,7 @@ class GenerateOrdersReport extends Test_Case {
 	 * @dataProvider invalid_product_id_data_provider
 	 */
 	public function test_invalid_product_id($id) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_300, 300);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_300, 300);
 		$this->api->generateOrdersReport($id);
 	}
 
@@ -50,7 +50,7 @@ class GenerateOrdersReport extends Test_Case {
 	 * @dataProvider invalid_timestamp_data_provider
 	 */
 	public function test_invalid_start_timestamp($start_timestamp) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_321, 321);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_321, 321);
 		$this->api->generateOrdersReport(null, $start_timestamp);
 	}
 
@@ -58,7 +58,7 @@ class GenerateOrdersReport extends Test_Case {
 	 * @dataProvider invalid_timestamp_data_provider
 	 */
 	public function test_invalid_end_timestamp($end_timestamp) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_322, 322);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_322, 322);
 		$this->api->generateOrdersReport(null, null, $end_timestamp);
 	}
 

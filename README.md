@@ -1,15 +1,16 @@
 ## Paddle.com API PHP wrapper library
 
-This library provides convinient way of querying Paddle API from php code.
+This library provides convenient way of querying Paddle API from php code.
+Based on https://github.com/breadhead/paddle
 
 ## Requirements
 
-PHP 5.3 or later.
+PHP 7.2 or later.
 
 ## Installation via Composer
 
 ```sh
-composer req breadhead/paddle
+composer require itelmenko/paddle
 ```
 
 ## Getting Started
@@ -17,7 +18,7 @@ composer req breadhead/paddle
 To interact with Paddle API you need to create an API object, and authorize using vendorId / vendorApiKey:
 
 ```php
-$api = new \Breadhead\Paddle\Api();
+$api = new \Paddle\Api();
 $api->authorizeVendor($vendorId, $vendorAuthCode);
 ```
 
@@ -30,14 +31,14 @@ $api->setTimeout(60);
 Both authorization and timeout can be set as well while creating new API object:
 
 ```php
-$api = new \Breadhead\Paddle\Api($vendorId, $vendorAuthCode, 60);
+$api = new \Paddle\Api($vendorId, $vendorAuthCode, 60);
 ```
 
 Example usage of generateLicense() method:
 
 ```php
 // define $vendorId and $vendorAuthCode first
-$api = new \Breadhead\Paddle\Api($vendorId, $vendorAuthCode, 60);
+$api = new \Paddle\Api($vendorId, $vendorAuthCode, 60);
 $productId = 100;
 $licenseCode = $api->generateLicense($productId);
 ```

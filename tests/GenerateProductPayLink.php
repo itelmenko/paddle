@@ -58,7 +58,7 @@ class GenerateProductPayLink extends Test_Case {
 	 * @dataProvider invalid_product_id_data_provider
 	 */
 	public function test_invalid_product_id($id) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_300, 300);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_300, 300);
 		$this->api->generateProductPayLink($id);
 	}
 
@@ -80,7 +80,7 @@ class GenerateProductPayLink extends Test_Case {
 			'title' => $title
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_301, 301);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_301, 301);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -89,7 +89,7 @@ class GenerateProductPayLink extends Test_Case {
 			'webhook_url' => 'http://example.com'
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_314, 314);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_314, 314);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -101,7 +101,7 @@ class GenerateProductPayLink extends Test_Case {
 			'image_url' => $url
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_302, 302);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_302, 302);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -123,7 +123,7 @@ class GenerateProductPayLink extends Test_Case {
 			'price' => $price
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_303, 303);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_303, 303);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -132,7 +132,7 @@ class GenerateProductPayLink extends Test_Case {
 			'price' => -1
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_304, 304);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_304, 304);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -144,7 +144,7 @@ class GenerateProductPayLink extends Test_Case {
 			'return_url' => $url
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_305, 305);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_305, 305);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -156,7 +156,7 @@ class GenerateProductPayLink extends Test_Case {
 			'paypal_cancel_url' => $url
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_306, 306);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_306, 306);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -176,7 +176,7 @@ class GenerateProductPayLink extends Test_Case {
 			'expires' => $expires
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_307, 307);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_307, 307);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -185,7 +185,7 @@ class GenerateProductPayLink extends Test_Case {
 			'expires' => 100
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_308, 308);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_308, 308);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -197,7 +197,7 @@ class GenerateProductPayLink extends Test_Case {
 			'parent_url' => $url
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_309, 309);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_309, 309);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -218,7 +218,7 @@ class GenerateProductPayLink extends Test_Case {
 			'affiliates' => $affiliates
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_310, 310);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_310, 310);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -236,7 +236,7 @@ class GenerateProductPayLink extends Test_Case {
 			'affiliates' => $affiliates
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_311, 311);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_311, 311);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -257,7 +257,7 @@ class GenerateProductPayLink extends Test_Case {
 			'stylesheets' => $stylesheets
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_312, 312);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_312, 312);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 
@@ -275,7 +275,7 @@ class GenerateProductPayLink extends Test_Case {
 			'stylesheets' => $stylesheets
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_313, 313);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_313, 313);
 		$this->api->generateProductPayLink($this->product_id, $data);
 	}
 

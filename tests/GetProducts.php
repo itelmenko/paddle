@@ -25,7 +25,7 @@ class getProducts extends Test_Case {
 	 * @dataProvider invalid_limit_provider
 	 */
 	public function test_invalid_limit($limit) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_319, 319);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_319, 319);
 		$this->api->getProducts($limit);
 	}
 
@@ -44,7 +44,7 @@ class getProducts extends Test_Case {
 	 * @dataProvider invalid_offset_provider
 	 */
 	public function test_invalid_offset($offset) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_320, 320);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_320, 320);
 		$this->api->getProducts(1, $offset);
 	}
 

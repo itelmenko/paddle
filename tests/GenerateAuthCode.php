@@ -31,7 +31,7 @@ class GenerateAuthCode extends Test_Case {
 	 * @dataProvider invalid_email_data_provider
 	 */
 	public function test_invalid_email($email) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_323, 323);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_323, 323);
 		$this->api->generateAuthCode($email, 'password');
 	}
 

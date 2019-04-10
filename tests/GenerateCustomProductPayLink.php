@@ -39,7 +39,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'return_url' => $url
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_305, 305);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_305, 305);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -51,7 +51,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'paypal_cancel_url' => $url
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_306, 306);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_306, 306);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -71,7 +71,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'expires' => $expires
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_307, 307);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_307, 307);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -80,7 +80,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'expires' => 100
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_308, 308);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_308, 308);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -92,7 +92,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'parent_url' => $url
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_309, 309);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_309, 309);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -113,7 +113,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'affiliates' => $affiliates
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_310, 310);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_310, 310);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -131,7 +131,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'affiliates' => $affiliates
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_311, 311);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_311, 311);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -152,7 +152,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'stylesheets' => $stylesheets
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_312, 312);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_312, 312);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -170,7 +170,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 			'stylesheets' => $stylesheets
 		);
 
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_313, 313);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_313, 313);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $this->webhook_url, $data);
 	}
 
@@ -178,12 +178,12 @@ class GenerateCustomProductPayLink extends Test_Case {
 	 * @dataProvider invalid_url_data_provider
 	 */
 	public function test_invalid_webhook_url($url) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_315, 315);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_315, 315);
 		$this->api->generateCustomProductPayLink($this->title, $this->price, $this->image_url, $url, array());
 	}
 
 	public function test_forbidden_discountable() {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_316, 316);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_316, 316);
 		$data = array(
 			'discountable' => true
 		);
@@ -191,7 +191,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 	}
 
 	public function test_forbidden_coupon_code() {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_317, 317);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_317, 317);
 		$data = array(
 			'coupon_code' => true
 		);
@@ -199,7 +199,7 @@ class GenerateCustomProductPayLink extends Test_Case {
 	}
 
 	public function test_forbidden_product_id() {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_318, 318);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_318, 318);
 		$data = array(
 			'product_id' => true
 		);

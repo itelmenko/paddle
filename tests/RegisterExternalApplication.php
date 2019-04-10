@@ -17,7 +17,7 @@ class registerExternalApplication extends Test_Case {
 	 * @dataProvider invalid_url_data_provider
 	 */
 	public function test_invalid_application_icon_url($icon) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_324, 324);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_324, 324);
 		$this->api->registerExternalApplication($this->name, $this->description, $icon);
 	}
 

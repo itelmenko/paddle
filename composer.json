@@ -1,11 +1,11 @@
 {
-	"name": "breadhead/paddle",
+	"name": "itelmenko/paddle",
 	"type": "library",
-	"description": "Breadhead version of Paddle.com API PHP library",
-	"homepage": "https://github.com/breadhead/paddle",
+	"description": "Paddle.com API PHP library",
+	"homepage": "https://github.com/itelmenko/paddle",
 	"license": "MIT",
 	"require": {
-		"php": ">=5.3.0",
+		"php": ">=7.2.0",
 		"ext-curl": "*"
 	},
 	"require-dev": {
@@ -13,7 +13,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Breadhead\\Paddle\\": "src/"
+			"Paddle\\": "src/"
 		}
 	}
 }

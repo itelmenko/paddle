@@ -25,7 +25,7 @@ class GenerateSentLicensesReport extends Test_Case {
 	 * @dataProvider invalid_product_id_data_provider
 	 */
 	public function test_invalid_product_id($id) {
-		$this->setExpectedException('InvalidArgumentException', Breadhead\Paddle\Api::ERR_300, 300);
+		$this->setExpectedException('InvalidArgumentException', \Paddle\Api::ERR_300, 300);
 		$this->api->generateSentLicensesReport($id);
 	}
 

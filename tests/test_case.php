@@ -30,7 +30,7 @@ class Test_Case extends PHPUnit_Framework_TestCase {
 		}
 
 		// create an api instance
-		$this->api = new Breadhead\Paddle\Api($this->vendorId, $this->vendorAuthCode);
+		$this->api = new \Paddle\Api($this->vendorId, $this->vendorAuthCode);
 	}
 
 	public function test_setup() {

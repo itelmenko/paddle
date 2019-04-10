@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/test_case.php';
 
-use Breadhead\Paddle\Filters;
+use \Paddle\Filters;
 
 class FiltersTest extends Test_Case {
 

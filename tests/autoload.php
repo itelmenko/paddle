@@ -10,7 +10,7 @@
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
-    $prefix = 'Breadhead\\Paddle\\';
+    $prefix = '\\Paddle\\';
 
     // base directory for the namespace prefix
     $baseDir = __DIR__ . '/../src/';

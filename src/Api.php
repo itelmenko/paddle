@@ -1,12 +1,11 @@
 <?php
 
-namespace Breadhead\Paddle;
+namespace Paddle;
 
 use phpDocumentor\Reflection\Types\Integer;
 
 /**
  * Paddle.com API PHP wrapper
- * @author Paddle.com
  */
 class Api {
 
@@ -317,10 +316,10 @@ class Api {
      */
     public function generateLicense($product_id) {
         $data = [];
-        
+
         $data['product_id'] = Filters::filter_product_id($product_id);
         $response = $this->httpCall('/product/generate_license', 'POST', $data);
-        
+
         return $response['license_code'];
     }
 
@@ -342,10 +341,10 @@ class Api {
      */
     public function getProducts($limit = 1, $offset = 0) {
         $data = [];
-        
+
         $data['limit'] = Filters::filter_limit($limit);
         $data['offset'] = Filters::filter_offset($offset);
-        
+
         return $this->httpCall('/product/get_products', 'POST', $data);
     }
 
@@ -478,7 +477,7 @@ class Api {
      */
     public function getVendorPublicKey() {
         $response = $this->httpCall('/user/get_public_key', 'POST');
-        
+
         return $response['public_key'];
     }
 
@@ -491,5 +490,5 @@ class Api {
 
         return $this->httpCall('/subscription/plans', 'POST', $data);
     }
-    
+
 }
