@@ -19,7 +19,7 @@ To interact with Paddle API you need to create an API object, and authorize usin
 
 ```php
 $api = new \Paddle\Api();
-$api->authorizeVendor($vendorId, $vendorAuthCode);
+$api->setVendorCredentials($vendorId, $vendorAuthCode);
 ```
 
 Optionally you can set HTTP timeout (default is 30 seconds):

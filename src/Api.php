@@ -9,11 +9,11 @@ use phpDocumentor\Reflection\Types\Integer;
  */
 class Api {
 
-    protected $vendor_id;
-    protected $vendor_auth_code;
+    protected $vendorId;
+    protected $vendorAuthCode;
     protected $timeout = 30;
-    protected $base_url = 'https://vendors.paddle.com/api/';
-    protected $api_version = '2.0';
+    protected $baseUrl = 'https://vendors.paddle.com/api/';
+    protected $apiVersion = '2.0';
 
     /*
      * 1XX - API response errors
@@ -76,18 +76,18 @@ class Api {
     const ERR_323 = '$vendor_email must be valid';
     const ERR_324 = '$application_icon_url must be a valid url';
 
-    public function __construct($vendor_id = null, $vendor_auth_code = null, $timeout = null) {
-        if ($vendor_id && $vendor_auth_code) {
-            $this->setVendorCredentials($vendor_id, $vendor_auth_code);
+    public function __construct($vendorId = null, $vendorAuthCode = null, $timeout = null) {
+        if ($vendorId && $vendorAuthCode) {
+            $this->setVendorCredentials($vendorId, $vendorAuthCode);
         }
         if ($timeout !== null) {
             $this->setTimeout($timeout);
         }
     }
 
-    public function setVendorCredentials($vendor_id, $vendor_auth_code) {
-        $this->vendor_id = $vendor_id;
-        $this->vendor_auth_code = $vendor_auth_code;
+    public function setVendorCredentials($vendorId, $vendorAuthCode) {
+        $this->vendorId = $vendorId;
+        $this->vendorAuthCode = $vendorAuthCode;
     }
 
     public function setTimeout($value) {
@@ -108,13 +108,13 @@ class Api {
      * @throws \Exception
      */
     private function httpCall($path, $method, $parameters = array()) {
-        if (!$this->vendor_id || !$this->vendor_auth_code) {
+        if (!$this->vendorId || !$this->vendorAuthCode) {
             throw new \Exception(self::ERR_204, 204);
         }
 
         // add auth data to parameters and build http query string
-        $parameters['vendor_id'] = $this->vendor_id;
-        $parameters['vendor_auth_code'] = $this->vendor_auth_code;
+        $parameters['vendor_id'] = $this->vendorId;
+        $parameters['vendor_auth_code'] = $this->vendorAuthCode;
         $parameters = http_build_query($parameters);
 
         // make a curl call
@@ -127,7 +127,7 @@ class Api {
         } else if (strtoupper($method) == 'GET') {
             $path = $path . '?' . $parameters;
         }
-        curl_setopt($ch, CURLOPT_URL, $this->base_url . $this->api_version . $path);
+        curl_setopt($ch, CURLOPT_URL, $this->baseUrl . $this->apiVersion . $path);
         $str_api_response = curl_exec($ch);
         $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $curl_error = curl_error($ch);
